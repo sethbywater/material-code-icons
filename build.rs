@@ -19,10 +19,9 @@ fn main() {
         let name = entry.file_stem().unwrap().to_str().unwrap();
         eprintln!("{name}");
         let id = name.replace('-', "_").replace('3', "THREE_").to_uppercase();
-        let size = entry.metadata().unwrap().len() as usize;
 
         icon_idxs.insert(name.to_owned(), icon_count);
-        bare_icons.push_str(format!("pub const {id}: &'static [u8; {size}] = include_bytes!(\"../vscode-material-icon-theme/icons/{name}.svg\");\n").as_str());
+        bare_icons.push_str(format!("pub const {id}: &'static [u8] = include_bytes!(\"../vscode-material-icon-theme/icons/{name}.svg\");\n").as_str());
         icon_arr.push_str(format!("\t{id},\n").as_str());
 
         icon_count += 1;
