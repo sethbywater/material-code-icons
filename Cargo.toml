@@ -2,7 +2,14 @@
 name = "material-code-icons"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+lazy_static = "1.4.0"
+
+[build-dependencies]
+glob = "0.3.0"
+serde_json = "1.0.91"
+serde = "1.0.151"
