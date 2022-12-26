@@ -23,7 +23,10 @@
 
 use std::collections::HashMap;
 
-mod icons;
+mod icons {
+    include!("../target/icons.rs");
+}
+
 pub use icons::*;
 
 lazy_static::lazy_static! {

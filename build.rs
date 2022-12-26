@@ -124,5 +124,5 @@ pub(crate) const NAMES: [(&str, usize); {names_count}] = [
 ];
 "
     );
-    std::fs::write("src/icons.rs", contents).expect("Could not write icons.rs to disk");
+    std::fs::write("target/icons.rs", contents).expect("Could not write icons.rs to disk");
 }
